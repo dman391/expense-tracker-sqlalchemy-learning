@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv, find_dotenv
-from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy import create_engine
 env_path = find_dotenv()
 load_dotenv(env_path)
@@ -18,3 +18,7 @@ engine = create_engine(
 
 
 Base = declarative_base()
+
+#builds "factory" so dont have to keep building a connection and writting sql code 
+Sessionfactory = sessionmaker(bind=engine)
+
