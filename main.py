@@ -13,3 +13,6 @@ with Sessionfactory() as session:
 #finance.create_account('bob')
 
 finance.list_accounts()
+
+#finance.create_category("test")
+finance.list_categories()
