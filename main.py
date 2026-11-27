@@ -9,4 +9,7 @@ with Sessionfactory() as session:
     finance = FinanceService(session)
 
 
-finance.create_account('joe', 50)
+#finance.create_account('joe', 50)
+#finance.create_account('bob')
+
+finance.list_accounts()

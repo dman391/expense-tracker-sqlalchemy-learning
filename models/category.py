@@ -8,7 +8,7 @@ class Category(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False, unique=True)
 
-    accounts = relationship("Account", back_populates = 'Category')
+    transactions = relationship("Transaction", back_populates="category")
 
     __table_args__ = (
         CheckConstraint("name != ''"),

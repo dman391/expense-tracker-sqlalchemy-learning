@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 class Transaction(Base):
     __tablename__ = "transactions"
     id = Column(Integer, primary_key=True)
-    amount_id = Column(Integer, ForeignKey("accounts.id"))
+    account_id = Column(Integer, ForeignKey("accounts.id"))
     category_id = Column(Integer, ForeignKey("categories.id"))
     amount = Column(Float, nullable=False)
     date = Column(Date, nullable=False)
