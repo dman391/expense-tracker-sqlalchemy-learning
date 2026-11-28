@@ -8,11 +8,8 @@ Base.metadata.create_all(engine)
 with Sessionfactory() as session:
     finance = FinanceService(session)
 
+#keeping things inside the with means we dont need to worry about resource control or having to do roll backs ourself
 
-#finance.create_account('joe', 50)
-#finance.create_account('bob')
+    finance.list_accounts()
 
-finance.list_accounts()
-
-#finance.create_category("test")
-finance.list_categories()
+    finance.list_categories()
